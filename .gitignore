@@ -1,0 +1,4 @@
+venv/
+.vscode/
+crm_django/db.sqlite3
+crm_django/crm_django/__pycache__
