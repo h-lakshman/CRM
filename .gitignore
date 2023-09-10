@@ -1,4 +1,5 @@
 venv/
 .vscode/
 crm_django/db.sqlite3
-crm_django/crm_django/__pycache__
+crm_django/crm_django/__pycache__/
+crm_django/lead/__pycache__ 
