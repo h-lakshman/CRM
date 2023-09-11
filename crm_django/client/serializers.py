@@ -1,15 +1,11 @@
 from rest_framework import serializers
 
-from .models import Lead
-
-from team.serializers import UserSerializer
+from .models import Client, Note
 
 
-class LeadSerializer(serializers.ModelSerializer):
-    assigned_to = UserSerializer(read_only=True)
-
+class ClientSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Lead
+        model = Client
         read_only_fields = (
             'created_by',
             'created_at',
@@ -17,16 +13,21 @@ class LeadSerializer(serializers.ModelSerializer):
         ),
         fields = (
             'id',
-            'company',
+            'name',
             'contact_person',
             'email',
             'phone',
             'website',
-            'confidence',
-            'estimated_value',
-            'status',
-            'priority',
-            'assigned_to',
             'created_at',
             'modified_at',
+        )
+
+
+class NoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Note
+        fields = (
+            'id',
+            'name',
+            'body',
         )
